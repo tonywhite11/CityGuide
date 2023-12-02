@@ -15,8 +15,9 @@ client = OpenAI()
 load_dotenv()
 
 # Set your OpenAI API key
-# openai.api_key = ""
-# client = openai.OpenAI(api_key ='')
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# client = openai.OpenAI(api_key ='OPENAI_API_KEY')
 
 # Initialize the OpenAI client using the API key from Streamlit secrets
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])

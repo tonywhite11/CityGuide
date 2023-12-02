@@ -10,7 +10,7 @@ import pandas as pd
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-client = OpenAI()
+
 
 load_dotenv()
 
@@ -69,6 +69,7 @@ def geocode_address(address):
 
 # Function to call DALL-E 3 API
 def generate_image(prompt):
+    client = OpenAI()
     try:
         response = client.images.generate(
             model="dall-e-3",

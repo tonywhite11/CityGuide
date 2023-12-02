@@ -15,9 +15,13 @@ client = OpenAI()
 load_dotenv()
 
 # Set your OpenAI API key
-# openai.api_key = "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"
-# client = openai.OpenAI(api_key ='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')
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+# openai.api_key = ""
+# client = openai.OpenAI(api_key ='')
+
+# Initialize the OpenAI client using the API key from Streamlit secrets
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+
+# Initialize the Google Maps client using the API key from Streamlit secrets
 gmaps = googlemaps.Client(key=st.secrets["GOOGLE_MAPS_API_KEY"])
 
 class GPTCall:
